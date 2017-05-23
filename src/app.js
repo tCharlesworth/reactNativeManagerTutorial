@@ -10,7 +10,8 @@ import { Header } from './components/common';
 import LoginForm from './components/LoginForm';
 
 class App extends Component {
-    componentWillMount() {
+    constructor(props) {
+        super(props); 
         // Initialize Firebase
         firebase.initializeApp(config.firebase);
     }
