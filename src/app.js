@@ -6,6 +6,9 @@ import reducers             from './reducers';
 import firebase             from 'firebase';
 import config               from './config.json';
 
+import { Header } from './components/common';
+import LoginForm from './components/LoginForm';
+
 class App extends Component {
     componentWillMount() {
         // Initialize Firebase
@@ -15,7 +18,8 @@ class App extends Component {
         return (
             <Provider store={createStore(reducers)}>
                 <View>
-                    <Text>Hello World!</Text>
+                    <Header headerTitle="TiTle" />
+                    <LoginForm />
                 </View>
             </Provider>
         );
