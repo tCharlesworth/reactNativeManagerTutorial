@@ -18,7 +18,7 @@ class App extends Component {
         return (
             <Provider store={createStore(reducers)}>
                 <View>
-                    <Header headerTitle="TiTle" />
+                    <Header headerText="TiTle" />
                     <LoginForm />
                 </View>
             </Provider>
