@@ -14,6 +14,15 @@ class LoginForm extends Component {
         const { email, password } = this.props;
         this.props.loginUser({email, password})
     }
+    renderError() {
+        if( this.props.error != '' ) {
+            return (
+                <CardItem>
+                    <Text style={styles.errorTextStyle}>{ this.props.error }</Text>
+                </CardItem>
+            );
+        }
+    }
     render() {
         console.log(this.props);
         return (
@@ -34,6 +43,7 @@ class LoginForm extends Component {
                         placeholder="********" 
                         value={this.props.password}/>
                 </CardItem>
+                { this.renderError() }
                 <CardItem>
                     <Button onPress={this.onButtonPress.bind(this)}>Login</Button>
                 </CardItem>
@@ -42,10 +52,18 @@ class LoginForm extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    const { email, password, user } = state.auth;
+const styles = {
+    errorTextStyle: {
+        fontSize: 20,
+        alignSelf: 'center',
+        color: 'red'
+    }
+};
 
-    return { email, password, user };
+const mapStateToProps = (state) => {
+    const { email, password, user, error } = state.auth;
+
+    return { email, password, user, error };
 }
 
 export default connect(mapStateToProps, { 
