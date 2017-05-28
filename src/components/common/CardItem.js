@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 const CardItem = (props) => {
     return (
-        <View style={styles.itemStyle}>
+        <View style={[styles.itemStyle, props.style]}>
             { props.children }
         </View>
     );
