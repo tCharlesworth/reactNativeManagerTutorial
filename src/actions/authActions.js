@@ -22,11 +22,11 @@ export const loginUser = ({ email, password }) => {
         dispatch({ type: LOGIN_USER_STARTED });
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(user => { loginUserSuccess(dispatch, user); })
-            .catch(() => {
-                firebase.auth().createUserWithEmailAndPassword(email, password)
-                    .then(user => { loginUserSuccess(dispatch, user); })
-                    .catch(() => { loginUserFailure(dispatch); });
-            });
+            .catch((err) => { loginUserFailure(dispatch, err) });
+            //     firebase.auth().createUserWithEmailAndPassword(email, password)
+            //         .then(user => { loginUserSuccess(dispatch, user); })
+            //         .catch((error) => { ; });
+            // });
     };
 };
 
@@ -39,8 +39,9 @@ const loginUserSuccess = (dispatch, user) => {
     Actions.main();
 };
 
-const loginUserFailure = (dispatch) => {
+const loginUserFailure = (dispatch, error) => {
     dispatch({
-        type: LOGIN_USER_FAILED
+        type: LOGIN_USER_FAILED,
+        error
     });
 };

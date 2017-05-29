@@ -24,6 +24,7 @@ export default SignupReducer = (state = INITIAL_STATE, action) => {
         case CREATE_USER_SUCCESS:
             return { ...state, ...INITIAL_STATE };
         case CREATE_USER_FAILURE:
+            console.log('CAUGHT ERROR: ', action.payload);
             return { ...state, error: 'Signup Failed', password: '', loading: false };
         default:
             return state;
