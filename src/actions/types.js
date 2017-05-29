@@ -9,3 +9,4 @@ export const CREATE_USER_SUCCESS     = 'create_user_success';
 export const CREATE_USER_FAILURE     = 'create_user_failure';
 export const CREATE_USER_STARTED     = 'create_user_started';
 export const EMPLOYEE_UPDATE = 'employee_update';
+export const EMPLOYEE_CREATE_SUCCESS = 'employee_create_success';
