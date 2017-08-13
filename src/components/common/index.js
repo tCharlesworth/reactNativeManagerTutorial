@@ -5,3 +5,4 @@ export * from './Header';
 export * from './Spinner';
 export * from './TextField';
 export * from './Checkbox';
+export * from './Confirm';
