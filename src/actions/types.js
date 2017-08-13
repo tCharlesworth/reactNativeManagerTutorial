@@ -11,3 +11,4 @@ export const CREATE_USER_STARTED     = 'create_user_started';
 export const EMPLOYEE_UPDATE = 'employee_update';
 export const EMPLOYEE_CREATE_SUCCESS = 'employee_create_success';
 export const EMPLOYEES_FETCH_SUCCESS = 'employee_fetch_success';
+export const EMPLOYEE_SAVE_SUCCESS = 'employee_save_success';
